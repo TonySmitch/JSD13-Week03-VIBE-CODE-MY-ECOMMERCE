@@ -1,0 +1,207 @@
+sort<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PixelLab – Digital Photo Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <h1 class="logo">PixelLab</h1>
+        <nav class="nav">
+          <a href="#" class="nav-link active">Home</a>
+          <a href="#" class="nav-link">Prints</a>
+          <a href="#" class="nav-link">Services</a>
+          <a href="#" class="nav-link cart-link" id="cartToggle">
+            Cart <span class="cart-count" id="cartCount">0</span>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h2>Your Photos, Perfectly Printed</h2>
+        <p>Upload, enhance, and order premium photo prints delivered to your door.</p>
+      </div>
+    </section>
+
+    <section class="upload-section" id="uploadSection">
+      <div class="container">
+        <div class="upload-zone" id="uploadZone">
+          <div class="upload-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          </div>
+          <p class="upload-text">Drag & drop your photos here</p>
+          <p class="upload-sub">or</p>
+          <label class="btn btn-primary upload-btn">
+            Browse Files
+            <input type="file" accept="image/*" multiple id="fileInput">
+          </label>
+          <p class="upload-hint">Supports JPEG, PNG, TIFF</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="editor-section" id="editorSection" style="display:none">
+      <div class="container">
+        <div class="editor-layout">
+          <div class="editor-preview" id="editorPreview">
+            <img id="previewImage" alt="Preview">
+          </div>
+          <div class="editor-controls">
+            <h3>Photo Editor</h3>
+            <div class="thumbnails" id="thumbnails"></div>
+            <div class="control-group">
+              <label>Exposure</label>
+              <input type="range" id="exposure" min="-100" max="100" value="0">
+            </div>
+            <div class="control-group">
+              <label>Brightness</label>
+              <input type="range" id="brightness" min="0" max="200" value="100">
+            </div>
+            <div class="control-group">
+              <label>Contrast</label>
+              <input type="range" id="contrast" min="0" max="200" value="100">
+            </div>
+            <div class="control-group">
+              <label>Saturation</label>
+              <input type="range" id="saturation" min="0" max="200" value="100">
+            </div>
+            <div class="control-group">
+              <label>Hue</label>
+              <input type="range" id="hue" min="0" max="360" value="0">
+            </div>
+            <div class="control-group">
+              <label>White Balance</label>
+              <input type="range" id="whiteBalance" min="-100" max="100" value="0">
+            </div>
+            <div class="control-group">
+              <label>Vibrance</label>
+              <input type="range" id="vibrance" min="0" max="200" value="100">
+            </div>
+            <div class="control-group">
+              <label>Shadows</label>
+              <input type="range" id="shadows" min="-100" max="100" value="0">
+            </div>
+            <div class="control-group">
+              <label>Grayscale</label>
+              <input type="range" id="grayscale" min="0" max="100" value="0">
+            </div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <button class="btn btn-secondary" id="resetFilters">Reset</button>
+              <button class="btn btn-primary" id="autoAdjustBtn">Auto Adjust</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="print-section" id="printSection" style="display:none">
+      <div class="container">
+        <h3>Choose Print Size</h3>
+        <div class="print-grid" id="printGrid">
+          <div class="print-card" data-size="4x6" data-price="15">
+            <div class="print-visual" style="--aspect: 2/3">4x6</div>
+            <p class="print-label">4 × 6 in</p>
+            <p class="print-price">฿15</p>
+          </div>
+          <div class="print-card" data-size="5x7" data-price="25">
+            <div class="print-visual" style="--aspect: 5/7">5x7</div>
+            <p class="print-label">5 × 7 in</p>
+            <p class="print-price">฿25</p>
+          </div>
+          <div class="print-card" data-size="8x10" data-price="50">
+            <div class="print-visual" style="--aspect: 4/5">8x10</div>
+            <p class="print-label">8 × 10 in</p>
+            <p class="print-price">฿50</p>
+          </div>
+          <div class="print-card" data-size="wallet" data-price="10">
+            <div class="print-visual" style="--aspect: 2/3">Wallet</div>
+            <p class="print-label">Wallet (2×3)</p>
+            <p class="print-price">฿10</p>
+          </div>
+          <div class="print-card" data-size="8.5x11" data-price="80">
+            <div class="print-visual" style="--aspect: 8.5/11">8.5x11</div>
+            <p class="print-label">8.5 × 11 in</p>
+            <p class="print-price">฿80</p>
+          </div>
+          <div class="print-card" data-size="12x18" data-price="120">
+            <div class="print-visual" style="--aspect: 2/3">12x18</div>
+            <p class="print-label">12 × 18 in</p>
+            <p class="print-price">฿120</p>
+          </div>
+          <div class="print-card" data-size="18x24" data-price="200">
+            <div class="print-visual" style="--aspect: 3/4">18x24</div>
+            <p class="print-label">18 × 24 in</p>
+            <p class="print-price">฿200</p>
+          </div>
+          <div class="print-card" data-size="24x36" data-price="350">
+            <div class="print-visual" style="--aspect: 2/3">24x36</div>
+            <p class="print-label">24 × 36 in</p>
+            <p class="print-price">฿350</p>
+          </div>
+          <div class="print-card" data-size="thai-passport" data-price="100">
+            <div class="print-visual" style="--aspect: 1.38/1.77">Passport</div>
+            <p class="print-label">Thai Passport (1.38×1.77)</p>
+            <p class="print-price">฿100</p>
+          </div>
+          <div class="print-card" data-size="thai-id" data-price="80">
+            <div class="print-visual" style="--aspect: 3/4">ID Card</div>
+            <p class="print-label">Thai ID Card (1.5×2)</p>
+            <p class="print-price">฿80</p>
+          </div>
+          <div class="print-card" data-size="thai-dl-1x1" data-price="50">
+            <div class="print-visual" style="--aspect: 1/1">DL 1x1</div>
+            <p class="print-label">Thai DL (1×1)</p>
+            <p class="print-price">฿50</p>
+          </div>
+          <div class="print-card" data-size="thai-dl-15" data-price="70">
+            <div class="print-visual" style="--aspect: 1/1">DL 1.5</div>
+            <p class="print-label">Thai DL (1.5×1.5)</p>
+            <p class="print-price">฿70</p>
+          </div>
+          <div class="print-card" data-size="thai-15x2" data-price="90">
+            <div class="print-visual" style="--aspect: 3/4">1.5×2</div>
+            <p class="print-label">1.5 × 2 in (Thai)</p>
+            <p class="print-price">฿90</p>
+          </div>
+        </div>
+        <div class="print-actions">
+          <div class="qty-control">
+            <button id="qtyMinus">−</button>
+            <span id="qtyDisplay">1</span>
+            <button id="qtyPlus">+</button>
+          </div>
+          <button class="btn btn-primary" id="addToCartBtn">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="cart-section" id="cartSection" style="display:none">
+      <div class="container">
+        <h3>Your Cart</h3>
+        <div id="cartItems"></div>
+        <div class="cart-total" id="cartTotal"></div>
+        <button class="btn btn-primary" id="checkoutBtn">Checkout</button>
+        <button class="btn btn-secondary" id="clearCartBtn">Clear Cart</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 PixelLab. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
