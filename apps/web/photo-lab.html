@@ -1,0 +1,218 @@
+sort<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PixelLab – Digital Photo Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <h1 class="logo">PixelLab</h1>
+        <nav class="nav">
+          <a href="#" class="nav-link active">Home</a>
+          <a href="#" class="nav-link">Prints</a>
+          <a href="#" class="nav-link">Services</a>
+          <a href="#" class="nav-link cart-link" id="cartToggle">
+            Cart <span class="cart-count" id="cartCount">0</span>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h2>Your Photos, Perfectly Printed</h2>
+        <p>Upload, enhance, and order premium photo prints delivered to your door.</p>
+      </div>
+    </section>
+
+    <section class="promo-section">
+      <div class="container">
+        <div class="promo-card">
+          <div class="promo-graphic">
+            <svg class="promo-svg" viewBox="0 0 500 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="500" height="350" rx="20" fill="url(#sp-bg)"/>
+              <defs>
+                <linearGradient id="sp-bg" x1="0" y1="0" x2="500" y2="350">
+                  <stop offset="0%" stop-color="#1a1a2e"/>
+                  <stop offset="50%" stop-color="#16213e"/>
+                  <stop offset="100%" stop-color="#0f3460"/>
+                </linearGradient>
+              </defs>
+              <rect x="150" y="40" width="200" height="160" rx="10" fill="#2a2a2a" stroke="#e6a830" stroke-width="2" opacity="0.9"/>
+              <rect x="165" y="55" width="170" height="130" rx="6" fill="#333"/>
+              <rect x="180" y="70" width="50" height="40" rx="4" fill="#e6a830" opacity="0.3"/>
+              <circle cx="270" cy="95" r="22" fill="#f5c842" opacity="0.12"/>
+              <rect x="200" y="140" width="100" height="30" rx="4" fill="#e6a830" opacity="0.12"/>
+              <rect x="50" y="270" width="70" height="50" rx="6" fill="#2a2a2a" stroke="#555" stroke-width="1"/>
+              <rect x="140" y="270" width="70" height="50" rx="6" fill="#2a2a2a" stroke="#555" stroke-width="1"/>
+              <rect x="230" y="270" width="70" height="50" rx="6" fill="#2a2a2a" stroke="#555" stroke-width="1"/>
+              <rect x="320" y="270" width="70" height="50" rx="6" fill="#2a2a2a" stroke="#555" stroke-width="1"/>
+              <rect x="410" y="270" width="70" height="50" rx="6" fill="#2a2a2a" stroke="#555" stroke-width="1"/>
+              <text x="85" y="300" text-anchor="middle" fill="#e6a830" font-size="10" font-family="system-ui">4×6</text>
+              <text x="175" y="300" text-anchor="middle" fill="#e6a830" font-size="10" font-family="system-ui">5×7</text>
+              <text x="265" y="300" text-anchor="middle" fill="#e6a830" font-size="10" font-family="system-ui">8×10</text>
+              <text x="355" y="300" text-anchor="middle" fill="#e6a830" font-size="10" font-family="system-ui">12×18</text>
+              <text x="445" y="300" text-anchor="middle" fill="#e6a830" font-size="10" font-family="system-ui">24×36</text>
+              <circle cx="40" cy="70" r="4" fill="#e6a830" opacity="0.4"/>
+              <circle cx="460" cy="110" r="3" fill="#f5c842" opacity="0.3"/>
+              <circle cx="430" cy="50" r="5" fill="#e6a830" opacity="0.2"/>
+            </svg>
+          </div>
+          <div class="promo-text">
+            <span class="promo-tag">Service Planning</span>
+            <h3>Professional Photo Printing</h3>
+            <p>From standard 4×6 to large format 24×36, plus Thai-specific sizes for passports, ID cards, and driver's licenses. Every print is crafted with premium materials and precise color calibration.</p>
+            <a href="#printSection" class="btn btn-primary">Browse Print Sizes</a>
+          </div>
+        </div>
+
+        <div class="promo-card">
+          <div class="promo-graphic">
+            <svg class="promo-svg" viewBox="0 0 500 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="500" height="350" rx="20" fill="url(#pr-bg)"/>
+              <defs>
+                <linearGradient id="pr-bg" x1="0" y1="0" x2="500" y2="350">
+                  <stop offset="0%" stop-color="#2d1b00"/>
+                  <stop offset="50%" stop-color="#4a2800"/>
+                  <stop offset="100%" stop-color="#6b3a00"/>
+                </linearGradient>
+              </defs>
+              <path d="M250 50 L345 105 L345 215 L250 270 L155 215 L155 105 Z" fill="#2a2a2a" stroke="#e6a830" stroke-width="2.5"/>
+              <text x="250" y="170" text-anchor="middle" fill="#f5c842" font-size="52" font-weight="800" font-family="system-ui">50%</text>
+              <text x="250" y="202" text-anchor="middle" fill="#e8e8e8" font-size="16" font-family="system-ui">OFF</text>
+              <text x="250" y="228" text-anchor="middle" fill="#999" font-size="11" font-family="system-ui">on bulk orders</text>
+              <path d="M70 70 L74 87 L91 91 L74 95 L70 112 L66 95 L49 91 L66 87 Z" fill="#e6a830"/>
+              <path d="M430 70 L434 87 L451 91 L434 95 L430 112 L426 95 L409 91 L426 87 Z" fill="#e6a830"/>
+              <path d="M250 28 L253 42 L267 45 L253 48 L250 62 L247 48 L233 45 L247 42 Z" fill="#f5c842"/>
+              <path d="M250 280 L253 294 L267 297 L253 300 L250 314 L247 300 L233 297 L247 294 Z" fill="#f5c842"/>
+              <rect x="60" y="230" width="70" height="70" rx="8" fill="#3a2a1a" stroke="#e6a830" stroke-width="1.5"/>
+              <rect x="65" y="260" width="60" height="6" rx="3" fill="#e6a830" opacity="0.5"/>
+              <rect x="90" y="235" width="10" height="60" rx="2" fill="#e6a830" opacity="0.3"/>
+              <rect x="370" y="230" width="70" height="70" rx="8" fill="#3a2a1a" stroke="#e6a830" stroke-width="1.5"/>
+              <rect x="375" y="260" width="60" height="6" rx="3" fill="#e6a830" opacity="0.5"/>
+              <rect x="400" y="235" width="10" height="60" rx="2" fill="#e6a830" opacity="0.3"/>
+              <circle cx="140" cy="110" r="3" fill="#e6a830" opacity="0.4"/>
+              <circle cx="370" cy="140" r="2" fill="#f5c842" opacity="0.3"/>
+              <circle cx="420" cy="310" r="4" fill="#e6a830" opacity="0.2"/>
+              <circle cx="80" cy="310" r="3" fill="#f5c842" opacity="0.25"/>
+            </svg>
+          </div>
+          <div class="promo-text">
+            <span class="promo-tag">Special Offer</span>
+            <h3>Limited Time Promotion</h3>
+            <p>Enjoy exclusive savings on your photo printing orders. Free shipping on prints over 12×18, and bulk discounts available for large projects. Premium quality at unbeatable prices.</p>
+            <a href="#printSection" class="btn btn-primary">Start Saving</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="print-section" id="printSection">
+      <div class="container">
+        <h3>Choose Print Size</h3>
+        <div class="print-grid" id="printGrid">
+          <div class="print-card" data-size="4x6" data-price="15">
+            <div class="print-visual" style="--aspect: 2/3">4x6</div>
+            <p class="print-label">4 × 6 in</p>
+            <p class="print-price">฿15</p>
+          </div>
+          <div class="print-card" data-size="5x7" data-price="25">
+            <div class="print-visual" style="--aspect: 5/7">5x7</div>
+            <p class="print-label">5 × 7 in</p>
+            <p class="print-price">฿25</p>
+          </div>
+          <div class="print-card" data-size="8x10" data-price="50">
+            <div class="print-visual" style="--aspect: 4/5">8x10</div>
+            <p class="print-label">8 × 10 in</p>
+            <p class="print-price">฿50</p>
+          </div>
+          <div class="print-card" data-size="wallet" data-price="10">
+            <div class="print-visual" style="--aspect: 2/3">Wallet</div>
+            <p class="print-label">Wallet (2×3)</p>
+            <p class="print-price">฿10</p>
+          </div>
+          <div class="print-card" data-size="8.5x11" data-price="80">
+            <div class="print-visual" style="--aspect: 8.5/11">8.5x11</div>
+            <p class="print-label">8.5 × 11 in</p>
+            <p class="print-price">฿80</p>
+          </div>
+          <div class="print-card" data-size="12x18" data-price="120">
+            <div class="print-visual" style="--aspect: 2/3">12x18</div>
+            <p class="print-label">12 × 18 in</p>
+            <p class="print-price">฿120</p>
+          </div>
+          <div class="print-card" data-size="18x24" data-price="200">
+            <div class="print-visual" style="--aspect: 3/4">18x24</div>
+            <p class="print-label">18 × 24 in</p>
+            <p class="print-price">฿200</p>
+          </div>
+          <div class="print-card" data-size="24x36" data-price="350">
+            <div class="print-visual" style="--aspect: 2/3">24x36</div>
+            <p class="print-label">24 × 36 in</p>
+            <p class="print-price">฿350</p>
+          </div>
+          <div class="print-card" data-size="thai-passport" data-price="100">
+            <div class="print-visual" style="--aspect: 1.38/1.77">Passport</div>
+            <p class="print-label">Thai Passport (1.38×1.77)</p>
+            <p class="print-price">฿100</p>
+          </div>
+          <div class="print-card" data-size="thai-id" data-price="80">
+            <div class="print-visual" style="--aspect: 3/4">ID Card</div>
+            <p class="print-label">Thai ID Card (1.5×2)</p>
+            <p class="print-price">฿80</p>
+          </div>
+          <div class="print-card" data-size="thai-dl-1x1" data-price="50">
+            <div class="print-visual" style="--aspect: 1/1">DL 1x1</div>
+            <p class="print-label">Thai DL (1×1)</p>
+            <p class="print-price">฿50</p>
+          </div>
+          <div class="print-card" data-size="thai-dl-15" data-price="70">
+            <div class="print-visual" style="--aspect: 1/1">DL 1.5</div>
+            <p class="print-label">Thai DL (1.5×1.5)</p>
+            <p class="print-price">฿70</p>
+          </div>
+          <div class="print-card" data-size="thai-15x2" data-price="90">
+            <div class="print-visual" style="--aspect: 3/4">1.5×2</div>
+            <p class="print-label">1.5 × 2 in (Thai)</p>
+            <p class="print-price">฿90</p>
+          </div>
+        </div>
+        <div class="print-actions">
+          <div class="qty-control">
+            <button id="qtyMinus">−</button>
+            <span id="qtyDisplay">1</span>
+            <button id="qtyPlus">+</button>
+          </div>
+          <button class="btn btn-primary" id="addToCartBtn">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="cart-section" id="cartSection" style="display:none">
+      <div class="container">
+        <h3>Your Cart</h3>
+        <div id="cartItems"></div>
+        <div class="cart-total" id="cartTotal"></div>
+        <button class="btn btn-primary" id="checkoutBtn">Checkout</button>
+        <button class="btn btn-secondary" id="clearCartBtn">Clear Cart</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 PixelLab. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
