@@ -12,9 +12,11 @@ sort<!DOCTYPE html>
       <div class="header-content">
         <h1 class="logo">PixelLab</h1>
         <nav class="nav">
-          <a href="#" class="nav-link active">Home</a>
+          <a href="#" class="nav-link active" id="homeLink">Home</a>
           <a href="#" class="nav-link">Prints</a>
           <a href="#" class="nav-link">Services</a>
+          <a href="#" class="nav-link" id="adminLink" style="display:none">Admin</a>
+          <a href="#" class="nav-link" id="loginLink">Login</a>
           <a href="#" class="nav-link cart-link" id="cartToggle">
             Cart <span class="cart-count" id="cartCount">0</span>
           </a>
@@ -201,6 +203,94 @@ sort<!DOCTYPE html>
         <div class="cart-total" id="cartTotal"></div>
         <button class="btn btn-primary" id="checkoutBtn">Checkout</button>
         <button class="btn btn-secondary" id="clearCartBtn">Clear Cart</button>
+      </div>
+    </section>
+
+    <section class="payment-section" id="paymentSection">
+      <div class="payment-overlay" id="paymentOverlay">
+        <div class="payment-modal">
+          <div class="payment-header">
+            <h3>Select Payment Method</h3>
+            <button class="payment-close" id="paymentClose">&times;</button>
+          </div>
+          <div class="payment-order-summary">
+            <span>Total Amount</span>
+            <span class="payment-total" id="paymentTotal">฿0</span>
+          </div>
+          <div class="payment-channels" id="paymentChannels">
+          </div>
+          <div class="payment-actions">
+            <button class="btn btn-primary" id="payNowBtn">Pay Now</button>
+            <button class="btn btn-secondary" id="payCancelBtn">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="login-section" id="loginSection">
+      <div class="login-overlay" id="loginOverlay">
+        <div class="login-modal">
+          <div class="login-header">
+            <h3>Login</h3>
+            <button class="login-close" id="loginClose">&times;</button>
+          </div>
+          <div class="login-body">
+            <div class="form-group">
+              <label for="loginUsername">Username</label>
+              <input type="text" id="loginUsername" placeholder="Enter username">
+            </div>
+            <div class="form-group">
+              <label for="loginPassword">Password</label>
+              <input type="password" id="loginPassword" placeholder="Enter password">
+            </div>
+            <div class="login-error" id="loginError"></div>
+            <button class="btn btn-primary" id="loginSubmitBtn" style="width:100%;justify-content:center">Login</button>
+            <p class="login-hint">Admin: digitallabs / lab1234</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="admin-section" id="adminSection">
+      <div class="container">
+        <h2>Admin Dashboard</h2>
+        <div class="report-dropdown">
+          <button class="btn btn-secondary" id="reportDropdownBtn">Select Report ▾</button>
+          <div class="report-dropdown-menu" id="reportDropdownMenu">
+            <button class="report-option" data-period="daily">Daily</button>
+            <button class="report-option" data-period="weekly">Weekly</button>
+            <button class="report-option" data-period="monthly">Monthly</button>
+            <button class="report-option" data-period="quarterly">Quarterly</button>
+            <button class="report-option" data-period="halfyear">6 Months</button>
+            <button class="report-option" data-period="yearly">Yearly</button>
+            <button class="report-option" data-period="5year">5 Years</button>
+          </div>
+        </div>
+        <div class="report-summary">
+          <div class="summary-card">
+            <span class="summary-label">Total Revenue</span>
+            <span class="summary-value" id="reportRevenue">฿0</span>
+          </div>
+          <div class="summary-card">
+            <span class="summary-label">Total Orders</span>
+            <span class="summary-value" id="reportOrders">0</span>
+          </div>
+          <div class="summary-card">
+            <span class="summary-label">Avg Order Value</span>
+            <span class="summary-value" id="reportAvg">฿0</span>
+          </div>
+        </div>
+        <div class="report-chart">
+          <canvas id="reportChart"></canvas>
+        </div>
+        <div class="report-table-wrapper">
+          <table class="report-table" id="reportTable">
+            <thead>
+              <tr><th>Period</th><th>Orders</th><th>Revenue</th></tr>
+            </thead>
+            <tbody id="reportTableBody"></tbody>
+          </table>
+        </div>
       </div>
     </section>
   </main>
